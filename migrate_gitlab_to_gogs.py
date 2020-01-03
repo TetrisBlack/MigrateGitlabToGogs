@@ -61,7 +61,7 @@ assert len(gogs_token)>0, 'The gogs token cannot be empty!'
 if 'gitlab_token' in os.environ:
     gitlab_token=os.environ['gitlab_token']
 else:
-    gitlab_token = input(("\n\nToken to access your GITLAB account. This is NOT your password! Got to \n"
+    gitlab_token = input(("\n\nToken to access your GITLAB account. This is NOT your password! Go to \n"
                         "{}/profile/account \n"
                         "and copy the value in section 'Private token'. It should \n"
                         "look like du8dfsJlfEWFJAFhs\n"
@@ -124,7 +124,7 @@ for i in range(len(filtered_projects)):
 
     # Create repo 
     if args.add_to_private:
-        print('Posting to:' + gots_url + '/user/repos')
+        print('Posting to:' + gogs_url + '/user/repos')
         create_repo = s.post(gogs_url+'/user/repos', data=dict(token=gogs_token, name=dst_name, private=True))
 
     elif args.add_to_organization:
